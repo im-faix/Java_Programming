@@ -1,0 +1,49 @@
+package com.jspiders.arrays_dsa;
+
+import java.util.Scanner;
+
+public class Checking_Array_Element_isPalindriome_Or_Not
+{
+	
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the Array ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+		System.out.println("Enter the Elements of the Array");
+		for(int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		sc.close();
+		int count=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			if(isPalindrome(arr[i]))
+			{
+				System.out.println(arr[i]);
+				count++;
+			}
+		}
+		System.out.println(" There are "+count+ "  Palindrome in  an Array");
+	}
+	static boolean isPalindrome(int n)
+	{
+		int rev=0,n1=n;
+		while(n>0)
+		{
+			int rem = n%10;
+			rev = rev*10+rem;
+			n  = n/10;
+		}
+		if(rev == n1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
